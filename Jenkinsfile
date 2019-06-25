@@ -13,7 +13,7 @@ node {
     stage('Build image') {
        
         sh 'cd docker-test'
-        sh 'docker build -t dineshbotcha/docker-test:${env.BUILD_NUMBER} .'
+        sh 'docker build -t dineshbotcha/docker-test .'
     }
 
 
