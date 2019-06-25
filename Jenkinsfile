@@ -13,8 +13,10 @@ node {
     stage('Build image') {
        
         sh 'cd docker-test'
-        app = docker.build("dineshbotcha/docker-test")
+      #  app = docker.build("dineshbotcha/docker-test")
+         app = docker.build("docker-test")
     }
+
 
     stage('Push image') {
         withDockerRegistry(credentialsId: 'dockerhubid', url: 'https://registry.hub.docker.com') {
