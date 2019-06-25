@@ -19,10 +19,10 @@ node {
 
     stage('Push image') {
         withDockerRegistry(credentialsId: 'dockerhubid', url: 'https://registry.hub.docker.com') {
-            docker tag dineshbotcha/docker-test:${env.BUILD_NUMBER} docker-test:${env.BUILD_NUMBER}
-            docker tag dineshbotcha/docker-test:${env.BUILD_NUMBER} docker-test:latest
-            docker push docker-test:${env.BUILD_NUMBER}
-            docker push docker-test:latest
+           sh 'docker tag dineshbotcha/docker-test:${env.BUILD_NUMBER} docker-test:${env.BUILD_NUMBER}'
+           sh 'docker tag dineshbotcha/docker-test:${env.BUILD_NUMBER} docker-test:latest'
+           sh 'docker push docker-test:${env.BUILD_NUMBER}'
+           sh 'docker push docker-test:latest'
             
         }
     }
