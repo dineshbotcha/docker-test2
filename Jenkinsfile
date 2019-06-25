@@ -3,11 +3,11 @@ node {
     dir('docker-test') {
     deleteDir()
 }
-  stage('Initialize')
+/*  stage('Initialize')
     {
         def dockerHome = tool 'DOCKER_HOME'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+    }*/
 
     stage('clone repo') {
 
@@ -18,7 +18,8 @@ node {
     stage('Build image') {
        
         sh 'cd docker-test'
-        sh 'docker build -t dineshbotcha/docker-test .'
+       // sh 'docker build -t dineshbotcha/docker-test .'
+        def customImage = docker.build("my-image:${env.BUILD_ID}")
     }
 
 
