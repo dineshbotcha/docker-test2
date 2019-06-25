@@ -3,6 +3,11 @@ node {
     dir('docker-test') {
     deleteDir()
 }
+  stage('Initialize')
+    {
+        def dockerHome = tool 'DOCKER_HOME'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
 
     stage('clone repo') {
 
