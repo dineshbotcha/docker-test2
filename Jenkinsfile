@@ -13,7 +13,7 @@ node {
     stage('Build image') {
        
         sh 'cd docker-test'
-      #  app = docker.build("dineshbotcha/docker-test")
+      // app = docker.build("dineshbotcha/docker-test")
          app = docker.build("docker-test")
     }
 
