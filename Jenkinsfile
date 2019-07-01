@@ -18,6 +18,7 @@ pipeline {
             steps {
                 echo 'Starting to build docker image'
                 sh 'cd docker-test'
+                sh 'docker version'
                 script {
 
                     def customImage = docker.build("my-image:${env.BUILD_ID}")
